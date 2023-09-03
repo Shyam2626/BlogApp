@@ -6,7 +6,7 @@ const articleRouter = require('./routes/articles');
 const methodOverride=require('method-override');
 require('dotenv').config()
 
-mongoose.connect(`mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@cluster1.0sfxnq9.mongodb.net/blog2`, { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(`${process.env.MONGO_URL}`, { useNewUrlParser: true, useUnifiedTopology: true });
 
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({extended:false}));
